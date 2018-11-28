@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Greenlight Example') {
 		    steps {
-				withCredentials([usernamePassword(credentialsId: 'edbf3976-7de8-4d18-9e80-30167c96c94e', passwordVariable: 'vkey', usernameVariable: 'vid')]) {
+				withCredentials([usernamePassword(credentialsId: '902d2462-e536-4927-9398-d2ab0dae85a1', passwordVariable: 'vkey', usernameVariable: 'vid')]) {
 
 					powershell '''
 						$dir = \'C:/Program Files (x86)/.jenkins/jobs/Greenlight_API_pipeline/workspace/\'
