@@ -18,7 +18,7 @@ pipeline {
 				withCredentials([usernamePassword(credentialsId: '902d2462-e536-4927-9398-d2ab0dae85a1', passwordVariable: 'vkey', usernameVariable: 'vid')]) {
 
 					powershell '''
-						$dir = \'C:/Program Files (x86)/.jenkins/jobs/Greenlight_API_pipeline/workspace/\'
+						$dir = (Get-Item -Path ".\\").FullName
 						$zipupload = $dir + \'gl-scanner-java-LATEST.zip\';
 						(New-Object Net.WebClient).DownloadFile(\'https://downloads.veracode.com/securityscan/gl-scanner-java-LATEST.zip\',$zipupload);
 
